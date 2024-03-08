@@ -8,10 +8,15 @@ import android.widget.ImageButton
 import androidx.activity.enableEdgeToEdge
 
 class LoginActivity : AppCompatActivity() {
+
+    private lateinit var databaseHelper: DatabaseHelper
     override fun onCreate(savedInstanceState: Bundle?) {
         enableEdgeToEdge()
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_login)
+
+        //Initialize DatabaseHelper
+        databaseHelper= DatabaseHelper(this)
 
         val btnSignupinstead = findViewById<Button>(R.id.btnSignupinstead)
         btnSignupinstead.setOnClickListener {
